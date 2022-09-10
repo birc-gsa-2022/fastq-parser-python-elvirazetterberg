@@ -10,8 +10,8 @@ def main():
     )
     args = argparser.parse_args()
 
-    for line in (args.fastq):
-        if '@' in line:
+    for line in args.fastq:
+        if line.startswith('@'):
             continue
         else:
             seq = line.strip()

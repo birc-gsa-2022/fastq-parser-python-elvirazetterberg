@@ -10,9 +10,9 @@ def main():
     )
     args = argparser.parse_args()
 
-    for line in (args.fastq):
-        if '@' in line:
-            name = line.replace('@', '')
+    for line in args.fastq:
+        if line.startswith('@'):
+            name = line[1:]
             cleanname = name.strip()
             print(cleanname)
         else:
